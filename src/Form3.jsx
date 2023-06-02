@@ -29,15 +29,15 @@ function Form3() {
       return witnessesArray;
     };
 
-  return (<div>
+  return (<div style={{marginTop:"30px"}}>
     <h3>
           <Badge>3</Badge> Witnesses
     </h3>
   <Form onSubmit={handleSubmit}>
     {renderWitnesses()}
     <ButtonGroup>
-         <Button type="submit">Submit</Button>
-    <Button onClick={addNewWitness}>Add Witness</Button>
+    <Button color="primary" onClick={addNewWitness}>Add Witness</Button>
+         <Button color="primary" type="submit">Submit</Button>
     </ButtonGroup>
    
   </Form>

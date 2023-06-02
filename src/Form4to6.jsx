@@ -1,8 +1,8 @@
 // import React from 'react';
 import { useFormik } from "formik";
-import { Badge, FormGroup, Form, Input, Label, Button } from "reactstrap";
+import { Badge, FormGroup,Form,  Input, Label, Button } from "reactstrap";
 
-const Form4to6 = () => {
+const Form4to6 = (info) => {
   const formik = useFormik({
     initialValues: {
       fullName: "",
@@ -14,7 +14,8 @@ const Form4to6 = () => {
     },
   });
   return (
-    <>
+    <div style={{marginTop:"30px"}}>
+      <h1>Driver {info.driver}</h1>
     <Form onSubmit={formik.handleSubmit}>
       <FormGroup row>
         <h3>
@@ -249,13 +250,13 @@ const Form4to6 = () => {
           onChange={formik.handleChange}
           value={formik.values.endDateOfPolicy}
         />
-     <Button className="submit4to6" color="success" size="lg">
+     <Button className="submit4to6" color="primary" size="lg">
        Submit
      </Button>
     </Form>
     
     
- </>
+ </div>
   );
 };
 export default Form4to6;
