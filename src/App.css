@@ -2,5 +2,13 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 250px;
+  width: 350px;
+}
+
+.dateInput4to6{
+  margin: 5px 0;
+}
+
+.submit4to6{
+  margin: 30px;
 }
