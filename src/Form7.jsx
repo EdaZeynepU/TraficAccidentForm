@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import { Form, FormGroup, Label, Input, Button, Badge } from "reactstrap";
+import { Form, FormGroup, Input, Button, Badge } from "reactstrap";
 
 const violations = [
   "Violating a red light",
@@ -41,32 +41,40 @@ function Form7() {
 //   };
 
   return (
-    <div className="App">
+    <div>
         <h3>
       <Badge>
         7
       </Badge>Tick the appropriate box
         </h3>
-        <h3>A ---- B</h3>
+        <div className="ABForm7">
+        <span>A</span>
+        <span>B</span>
+        </div>
       <Form onSubmit={formik.handleSubmit}>
         {violations.map((violation, index) => (
           <FormGroup key={index}>
-            <Label >
+            <div className="divForm7">
               <Input
                 type="checkbox"
                 className="a btnForm7"
               />
-              <Input
+              
+              <p className="pForm7">
+              {violation}
+              </p><Input
                 type="checkbox"
                 className="b btnForm7"
               />
-              {violation}
-            </Label>
+            </div>
           </FormGroup>
         ))}
-        <Button color="primary" type="submit">
+        <div style={{display:"flex",justifyContent:"center"}}>
+        <Button color="primary" type="submit" size="lg" style={{width:"450px",margin:"15px 0"}}>
           Submit
         </Button>
+
+        </div>
       </Form>
     </div>
   );

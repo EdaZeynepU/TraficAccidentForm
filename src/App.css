@@ -1,3 +1,10 @@
+:root{
+  --sizeX:60vw;
+}
+
+body{
+  background-color: rgb(223, 222, 222);
+}
 .app{
   display: flex;
   justify-content: center;
@@ -16,4 +23,25 @@
 .btnForm7{
   width: 50px;
   height: 50px;
+}
+
+.ABForm7{
+  display: flex;
+  width: calc(60vw + 90px);
+  font-size:3em;
+  justify-content:space-between;
+  margin: 0 auto;
+}
+
+.divForm7{
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.pForm7{
+  width: var(--sizeX);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
