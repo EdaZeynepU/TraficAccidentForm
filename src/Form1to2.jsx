@@ -36,6 +36,7 @@ const Form1to2 = () => {
                   type="date"
                   name="sdasd"
                   placeholder="Time"
+                  style={{marginBottom:"20px"}}
                   value={time}
                   onChange={(e) => setTime(e.target.value)}
                 />
@@ -52,7 +53,7 @@ const Form1to2 = () => {
             </Row>
             
               <h3>
-          <Badge>2</Badge>Accident Location
+          <Badge>2</Badge> Accident Location
         </h3>  <Row>
         <Col>
         <FormGroup floating>
