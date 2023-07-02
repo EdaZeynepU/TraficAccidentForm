@@ -12,22 +12,22 @@ function App() {
   const handleFormSubmit = (values) => {
     // Update the form values state
     setFormValues((prevFormValues) => ({ ...prevFormValues, ...values }));
-    console.log({...formValues,"ace":"bdf"});
+    console.log({...formValues});
     console.log(formValues);
   };
 
-  const handleSubmitButton = () => {
-  // Perform any additional actions using the form values
-  console.log('All form values:', formValues);
-  // Make an API request, update the UI, etc.    
-};
+    const handleSubmitButton = () => {
+    // Perform any additional actions using the form values
+    console.log('All form values:', formValues);
+    // Make an API request, update the UI, etc.    
+  };
 
   return (
     <Container>
        {/* <FormProvider> */}
        <Row>
         <Col xs="12" xxl="6">
-          <Form1to2/>
+          <Form1to2 submitHandler={handleFormSubmit} />
         </Col>
         <Col xs="12" xxl="6">
           <Form3 />

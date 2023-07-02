@@ -8,13 +8,13 @@ const Form4to6 = ({ driver, submitHandler }) => {
   const formValues = useFormik({
     initialValues: {
       fullName: "",
-      tcId: 0,
+      tcId: 1111111111111,
       licenseAndClass: "",
       placeOfReceipt: "",
       adress: "",
       phoneNumber: "",
       email: "",
-      chassisNo: "",
+      chassisNo: 0,
       brandAndModel: "",
       numberPlate: "",
       usage: "",
@@ -25,6 +25,7 @@ const Form4to6 = ({ driver, submitHandler }) => {
       acidenteNo: "",
       policyNo: "",
       tramerDocNo: "",
+      startDateOfPolicy:"",
     },
     onSubmit: (values) => {
       console.log(values);
@@ -39,7 +40,7 @@ const Form4to6 = ({ driver, submitHandler }) => {
   return (
     <div style={{ marginTop: "30px" }}>
       <h1>Driver {driver}</h1>
-      <Form onSubmit={formValues.handleSubmit}>
+      <Form initialValues={formValues.initialValues} onSubmit={formValues.onSubmit}>
         <FormGroup row>
           <h3>
             <Badge>4</Badge> Driver Info
@@ -60,7 +61,6 @@ const Form4to6 = ({ driver, submitHandler }) => {
             id="tcId"
             name="tcId"
             type="number"
-            maxLength={11}
             placeholder="."
             onChange={(e) => {
               handleChange(e);
@@ -70,20 +70,75 @@ const Form4to6 = ({ driver, submitHandler }) => {
           />{" "}
           <Label htmlFor="tcId">T.C. ID number:</Label>
         </FormGroup>
-        <FormGroup floating>
-          <Input
-            id="licenseAndClass"
-            name="licenseAndClass"
-            type="text"
-            placeholder="."
-            onChange={handleChange}
-            value={formValues.values.licenseAndClass}
-          />
+        
+        
+        <FormGroup>
           <Label htmlFor="licenseAndClass">
             {" "}
             Driver{"'"}s License No. And Driver Class:
           </Label>
+        <Input
+            id="licenseAndClass"
+            name="licenseAndClass"
+            className="mb-3"
+            type="select"
+            onChange={handleChange}
+            value={formValues.values.licenseAndClass}
+        >
+          <option>
+            M
+          </option>
+          <option>
+            A1
+          </option>
+          <option>
+            A2
+          </option>
+          <option>
+            A
+          </option>
+          <option>
+            B1
+          </option>
+          <option>
+            B
+          </option>
+          <option>
+            C
+          </option>
+          <option>
+            C1
+          </option>
+          <option>
+            D1
+          </option>
+          <option>
+            D
+          </option>
+          <option>
+            BE
+          </option>
+          <option>
+            C1E
+          </option>
+          <option>
+            CE
+          </option>
+          <option>
+            D1E
+          </option>
+          <option>
+            DE
+          </option>
+          <option>
+            F
+          </option>
+          <option>
+            G
+          </option>
+        </Input>
         </FormGroup>
+
         <FormGroup floating>
           <Input
             id="placeOfReceipt"
@@ -286,6 +341,7 @@ const Form4to6 = ({ driver, submitHandler }) => {
         />
         {isSubmitted? (<Alert color="success">Submitted</Alert>):(<Alert color="warning">You have to Submit this</Alert>)}
         <Button
+        type="submit"
           onClick={()=>setIsSubmitted(true)}
           className="submit4to6"
           size="lg"
